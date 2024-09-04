@@ -6,10 +6,11 @@ import {
     Image,
     TouchableWithoutFeedback,
     TouchableOpacity,
-    TouchableHighlight, TouchableNativeFeedback, View, Button, Alert
+    TouchableHighlight, TouchableNativeFeedback, View, Button, Alert, Platform, Dimensions
 } from 'react-native';
 
 export default function App() {
+    console.log(Dimensions.get('screen'))
   const handlePress = (log: string) => console.log(log)
 
     function touchableComponents() {
@@ -99,13 +100,23 @@ export default function App() {
     }
 
     return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+        style={[styles.container, mainStyle]}
+    >
+        <View
+        style={{
+            backgroundColor:"yellow",
+            width: "50%",
+            height: 100
+        }}></View>
         {/*{touchableComponents()}*/}
         {buttonsAndAlerts()}
-        <StatusBar style="auto"/>
+        {/*<StatusBar style="auto"/>*/}
     </SafeAreaView>
   );
 }
+
+const mainStyle = {backgroundColor:"gold"};
 
 const styles = StyleSheet.create({
   container: {
@@ -113,5 +124,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
 });
