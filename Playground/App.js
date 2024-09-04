@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  Image,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight, TouchableNativeFeedback, View
+    StyleSheet,
+    Text,
+    SafeAreaView,
+    Image,
+    TouchableWithoutFeedback,
+    TouchableOpacity,
+    TouchableHighlight, TouchableNativeFeedback, View, Button, Alert
 } from 'react-native';
 
 export default function App() {
@@ -77,9 +77,31 @@ export default function App() {
         </>;
     }
 
+    function buttonsAndAlerts() {
+        return <>
+            <Button
+                color='red'
+                title="DO NOT CLICK ME!"
+                onPress={() => {
+                    Alert.alert("Didn't I?", "??",
+                        [
+                            {text: "yes", onPress: () => console.log('yes')},
+                            {text: "no", onPress: () => console.log("no")}
+                        ])
+                    alert('I TOLD YOU!!')
+                    console.log("BUM!")
+                }}/>
+            <Button
+                title="Send log (on iOS)"
+                onPress={() => Alert.prompt('tit', 'mes', text => console.log(text))}
+            />
+        </>;
+    }
+
     return (
     <SafeAreaView style={styles.container}>
-        {touchableComponents()}
+        {/*{touchableComponents()}*/}
+        {buttonsAndAlerts()}
         <StatusBar style="auto"/>
     </SafeAreaView>
   );
