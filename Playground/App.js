@@ -123,17 +123,17 @@ export default function App() {
                     width: 100,
                     height: 200,
                 }}/>
-                {/*<View style={{*/}
-                {/*backgroundColor: "tomato",*/}
-                {/*    width: 100,*/}
-                {/*    height: 100,*/}
-                {/*    alignSelf: "flex-start"*/}
-                {/*}}/>*/}
-                {/*<View style={{*/}
-                {/*    backgroundColor: "green",*/}
-                {/*    width: 100,*/}
-                {/*    height: 100,*/}
-                {/*}}/>*/}
+                <View style={{
+                backgroundColor: "tomato",
+                    width: 100,
+                    height: 100,
+                    alignSelf: "flex-start"
+                }}/>
+                <View style={{
+                    backgroundColor: "green",
+                    width: 100,
+                    height: 100,
+                }}/>
             </View>
 
 
@@ -166,9 +166,11 @@ export default function App() {
         <StatusBar style="auto"/>
 
 
-        {viewsStylesAndFlexibility()}
+
+
+        {/*{viewsStylesAndFlexibility()}*/}
         {/*{touchableComponents()}*/}
-        {buttonsAndAlerts()}
+        {/*{buttonsAndAlerts()}*/}
     </SafeAreaView>
   );
 }
