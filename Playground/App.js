@@ -6,8 +6,9 @@ import {
     Image,
     TouchableWithoutFeedback,
     TouchableOpacity,
-    TouchableHighlight, TouchableNativeFeedback, View, Button, Alert, Platform, Dimensions
+    TouchableHighlight, TouchableNativeFeedback, View, Button, Alert, Platform, Dimensions, ImageBackground
 } from 'react-native';
+import Welcome from "./app/components/Welcome";
 
 export default function App() {
     console.log(Dimensions.get('screen'))
@@ -201,12 +202,13 @@ export default function App() {
 
     return (
     <SafeAreaView
-        style={[styles.container, mainStyle]}
+        // style={[styles.container, mainStyle]}
     >
         <StatusBar style="auto"/>
+        <Welcome/>
 
 
-        {objectsPositioning()}
+        {/*{objectsPositioning()}*/}
         {/*{viewsStylesAndFlexibility()}*/}
         {/*{touchableComponents()}*/}
         {/*{buttonsAndAlerts()}*/}
