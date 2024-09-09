@@ -204,9 +204,8 @@ export default function App() {
     <SafeAreaView
         // style={[styles.container, mainStyle]}
     >
-        <StatusBar style="auto"/>
+        {/*<StatusBar style="auto"/>*/}
         <Welcome/>
-
 
         {/*{objectsPositioning()}*/}
         {/*{viewsStylesAndFlexibility()}*/}
