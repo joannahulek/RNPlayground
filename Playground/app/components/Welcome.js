@@ -1,8 +1,9 @@
 //rsf -->
 import React from 'react';
-import {StyleSheet, Text, View, Image, Button} from "react-native";
+import {StyleSheet, Text, View, Image, Button, Alert} from "react-native";
 
 let coffeeColor = 'sienna'
+let counter = 0
 
 export default function Welcome(props) {
     return (
@@ -14,7 +15,19 @@ export default function Welcome(props) {
             />
             <View >
                 <Button title='Wypij kawę'
-                color={coffeeColor}/>
+                color={coffeeColor}
+                        onPress={() => {
+                            counter++
+                            alert('Coffees drunk: '+ counter)
+                            console.log(counter)
+
+                            //
+                            // Alert.alert("Coffees drunk", counter,
+                            //     [
+                            //         {text: "ok", onPress: () => console.log(counter)},
+                            //     ])
+                        }}
+                />
             </View>
         </>
     );
